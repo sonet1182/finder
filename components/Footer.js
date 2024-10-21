@@ -1,0 +1,213 @@
+import Image from "next/image";
+import Link from "next/link";
+import React from "react";
+import Logo from "../assets/images/logo/logo.png";
+import qrImg from "../assets/images/tsqrcode.png";
+import playStore from "../assets/images/playStore.svg";
+import bkash from "../assets/images/bkash.svg";
+import ytIcon from "../assets/images/youtube_1384060.png";
+import { FaHandshake } from "react-icons/fa";
+import picon from "../public/favicon.png";
+
+function Footer() {
+  return (
+    <>
+      <footer className="footer bg-light pt-50">
+        <div className="container">
+          <div className="row">
+            <div className="col-12 col-sm-12 col-md-5 col-lg-5">
+              <Link passHref href="/">
+                <a>
+                  {" "}
+                  <Image alt="logo" src={Logo} width="200" height="65" />
+                </a>
+              </Link>
+              <div className="mt-20 mb-20 font-xs color-text-paragraph-2">
+                TutorSheba.com is a platform where parents, students and tutors
+                can easily connect with each other. We provide qualified
+                Home/Online tutors to help your child with studies and helping
+                them perform better in exams. We are a group of 2,50,000+ Tutors
+                and 30,000+ satisfied parents/students in Dhaka, Chattagram,
+                Rajshahi, Sylhet, Khulna, Barishal, Rangpur, Mymensingh cities
+                for different academic and professional subjects.
+              </div>
+              <div className="footer-social">
+                <a
+                  className="icon-socials icon-facebook"
+                  href="https://www.facebook.com/tutorsheba.official?mibextid=ZbWKwL"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Image
+                    width="100"
+                    height="100"
+                    alt="facebook logo"
+                    src="https://cdn.iconscout.com/icon/free/png-256/facebook-logo-2019-1597680-1350125.png"
+                  />
+                </a>
+                <a
+                  className="icon-socials icon-whatsapp"
+                  href="https://wa.me/01722575388"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Image
+                    width="100"
+                    height="100"
+                    alt="WhatsApp icon"
+                    src="https://cdn.iconscout.com/icon/free/png-256/whatsapp-1653084-1402372.png"
+                  />
+                </a>
+                <a
+                  className="icon-socials icon-linkedin"
+                  href="https://www.youtube.com/@tutorsheba"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Image
+                    width="100"
+                    height="100"
+                    alt="LinkedIn icon"
+                    src={ytIcon}
+                  />
+                </a>
+              </div>
+            </div>
+            <div className="col-6 col-sm-6 col-md-2  col-lg-2">
+              <h6 className="mb-20">Resources</h6>
+              <ul className="menu-footer">
+                <li>
+                  <Link passHref href="#">
+                    About us
+                  </Link>
+                </li>
+                <li>
+                  <Link passHref href="#">
+                    Our Team
+                  </Link>
+                </li>
+                <li>
+                  <Link passHref href="#">
+                    Products
+                  </Link>
+                </li>
+                <li>
+                  <Link passHref href="/contact">
+                    Contact
+                  </Link>
+                </li>
+                <li>
+                  <Link passHref href="/uddokta/home">
+                    <b className="text-purple link">
+                      {" "}
+                      <FaHandshake /> <strong>Sheba Uddokta</strong>
+                    </b>
+                  </Link>
+                </li>
+                <li className="link">
+                  <Link passHref href="/logo">
+                    <img alt="LinkedIn icon" src="favicon.png" />
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            <div className="col-6 col-sm-6 col-md-2 col-lg-2">
+              <h6 className="mb-20">More</h6>
+              <ul className="menu-footer">
+                <li>
+                  <Link passHref href="#">
+                    Privacy
+                  </Link>
+                </li>
+                <li>
+                  <Link passHref href="#">
+                    Help
+                  </Link>
+                </li>
+                <li>
+                  <Link passHref href="#">
+                    Terms
+                  </Link>
+                </li>
+                <li>
+                  <Link passHref href="#">
+                    FAQ
+                  </Link>
+                </li>
+                <li>
+                  <b>Pay Now</b>
+                  <a href="https://shop.bkash.com/offer-shop-dot-com-dot-bd01400/paymentlink">
+                    <Image src={bkash} height="80" width="180" alt="" />
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div className="col-12 col-sm-12 col-md-3 col-lg-3">
+              <h6 className="mb-20">Download Our Mobile App</h6>
+              <div>
+                <Image src={qrImg} height="120" width="120" />
+                <p>
+                  Our Android App is available right now. Scan the QR Code or
+                  Click the Button to Download
+                </p>
+                <a href="https://play.google.com/store/apps/details?id=com.esapath.tutorsheba">
+                  <Image src={playStore} height="60" width="160" />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div className="footer-bottom mt-50">
+            <div className="row">
+              <div className="col-12 col-md-6 ">
+                <span className="font-xs color-text-paragraph">
+                  Copyright &copy; 2022. Tutor Sheba all right reserved
+                </span>
+              </div>
+              <div className="col-12 col-md-6  ">
+                <div className="footer-social">
+                  <ul className="d-flex justify-content-end footer-privacy">
+                    <li className="mr-10">
+                      <Link
+                        passHref
+                        style={{ paddingRight: "10px" }}
+                        className="font-xs   color-text-paragraph"
+                        href="/privacy-policy-page"
+                      >
+                        Privacy Policy
+                      </Link>
+                    </li>
+                    {/* <li className="mr-10">
+                      <Link
+                        passHref
+                        style={{ paddingRight: "10px" }}
+                        className="font-xs bg-primary color-text-paragraph"
+                        href="#"
+                      >
+                        Terms &amp; Conditions
+                      </Link>
+                    </li> */}
+                    <li>
+                      <Link
+                        passHref
+                        style={{ paddingRight: "10px" }}
+                        className="font-xs bg-primary color-text-paragraph"
+                        href="#"
+                      >
+                        Security
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </>
+  );
+}
+
+export default Footer;
