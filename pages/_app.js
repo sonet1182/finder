@@ -6,6 +6,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./asset/style.css";
 import "../styles/globals.css";
+import "../styles/customFont.css";
 import axios from "axios";
 import picon from "../public/favicon.ico";
 import { ToastContainer } from "react-toastify";

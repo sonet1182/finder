@@ -1699,7 +1699,7 @@ label {
 }
 
 .box-swiper .swiper-container .item-logo .text-info-right h4 {
-  font-size: 16px;
+  font-size: 20px;
   line-height: 26px;
   margin-bottom: 3px;
 }
@@ -11658,4 +11658,12 @@ th {
 }
 .box-industry .css-1s2u09g-control {
   border-style: none;
+}
+
+.css-2613qy-menu{
+  z-index: 9999;
+}
+
+#react-select-2-listbox{
+  z-index: 9999;
 }

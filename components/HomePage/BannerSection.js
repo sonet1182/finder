@@ -1,6 +1,9 @@
 import React, { useState } from "react";
-import { FaArrowRight, FaMapMarkedAlt, FaSearch } from "react-icons/fa";
+import { FaArrowRight, FaSearch } from "react-icons/fa";
+import admission from "../../assets/icons/graduation_10555313.png";
 import Select from "react-select";
+import Slider from "react-slick";
+import Image from "next/image";
 const options = [
   { value: "chocolate", label: "Chocolate" },
   { value: "strawberry", label: "Strawberry" },
@@ -10,16 +13,96 @@ const options = [
 function BannerSection() {
   const [selectedOption, setSelectedOption] = useState(null);
 
+  var settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3500,
+    dots: false,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 3,
+          infinite: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
+
+  const skillsList = [
+    "English",
+    "Bangla",
+    "Math",
+    "Physics",
+    "Chemistry",
+    "Biology",
+    "ICT",
+  ];
+
+  const [categories, setCategories] = useState([
+    {
+      id: 1,
+      name: "মোবাইল ফোন",
+      image: admission,
+    },
+    {
+      id: 2,
+      name: "বাইক",
+      image: admission,
+    },
+    {
+      id: 3,
+      name: "ডকুমেন্টস",
+      image: admission,
+    },
+    {
+      id: 4,
+      name: "সার্টিফিকেট",
+      image: admission,
+    },
+    {
+      id: 5,
+      name: "সার্টিফিকেট",
+      image: admission,
+    },
+    {
+      id: 6,
+      name: "স্বজন",
+      image: admission,
+    },
+  ]);
+
   return (
     <>
       <section className="section-box">
         <div className="banner-hero hero-2 hero-3">
-          <div className="banner-inner">
+          <div className="banner-inner" style={{ zIndex: '9' }}>
             <div className="block-banner">
               <h1 className="text-42 color-white wow animate__animated animate__fadeInUp">
-                The #1 <span className="color-green">Job Board for</span>
-                <br className="d-none d-lg-block"></br>Hiring or Find your next
-                job
+                <div className="text-white">
+                  <span>&#8220;</span> হারিয়ে যাওয়া <span>&#8221;</span>
+                </div>
+                জিনিস অথবা ব্যাক্তি খুঁজে পান সহজেই
               </h1>
               <div
                 className="font-lg font-regular color-white mt-20 wow animate__animated animate__fadeInUp"
@@ -36,6 +119,10 @@ function BannerSection() {
                 <form>
                   <div className="box-industry">
                     <Select
+                      placeholder={<div>ধরন</div>}
+                      styles={{
+                        menu: (provided) => ({ ...provided, zIndex: 9999 }),
+                      }}
                       className="form-input mr-10 select-active"
                       defaultValue={selectedOption}
                       onChange={setSelectedOption}
@@ -44,6 +131,10 @@ function BannerSection() {
                   </div>
                   <div className="box-industry">
                     <Select
+                      placeholder={<div>লোকেশন</div>}
+                      styles={{
+                        menu: (provided) => ({ ...provided, zIndex: 9999 }),
+                      }}
                       className="form-input mr-10 select-active"
                       defaultValue={selectedOption}
                       onChange={setSelectedOption}
@@ -51,17 +142,15 @@ function BannerSection() {
                     />
                   </div>
 
-
-
                   <input
                     className="form-input input-keysearch mr-10"
                     type="text"
-                    placeholder="Your keyword... "
+                    placeholder="নাম / বর্ণনা... "
                   />
 
                   <div className="wrap2">
                     <button className="button2">
-                      <FaSearch className="text-light" /> Search
+                      <FaSearch className="text-light" /> খুঁজুন
                       <FaArrowRight />
                     </button>
                   </div>
@@ -79,192 +168,48 @@ function BannerSection() {
               </div>
             </div>
           </div>
-          <div className="container mt-60">
-            <div className="box-swiper mt-50">
-              <div className="swiper-container swiper-group-5 swiper">
-                <div className="swiper-wrapper pb-25 pt-5">
-                  <div className="swiper-slide hover-up">
-                    <a href="jobs-list.html">
-                      <div className="item-logo">
-                        <div className="image-left">
-                          <img
-                            alt="jobBox"
-                            src="assets/imgs/page/homepage1/marketing.svg"
-                          />
-                        </div>
-                        <div className="text-info-right">
-                          <h4>Marketing &amp; Sale</h4>
-                          <p className="font-xs">
-                            1526<span> Jobs Available</span>
-                          </p>
-                        </div>
-                      </div>
-                    </a>
-                  </div>
-                  <div className="swiper-slide hover-up">
-                    <a href="jobs-grid.html">
-                      <div className="item-logo">
-                        <div className="image-left">
-                          <img
-                            alt="jobBox"
-                            src="assets/imgs/page/homepage1/customer.svg"
-                          />
-                        </div>
-                        <div className="text-info-right">
-                          <h4>Customer Help</h4>
-                          <p className="font-xs">
-                            185<span> Jobs Available</span>
-                          </p>
-                        </div>
-                      </div>
-                    </a>
-                  </div>
-                  <div className="swiper-slide hover-up">
-                    <a href="jobs-grid.html">
-                      <div className="item-logo">
-                        <div className="image-left">
-                          <img
-                            alt="jobBox"
-                            src="assets/imgs/page/homepage1/finance.svg"
-                          />
-                        </div>
-                        <div className="text-info-right">
-                          <h4>Finance</h4>
-                          <p className="font-xs">
-                            168<span> Jobs Available</span>
-                          </p>
+
+    
+                 
+
+                 
+
+       
+         
+          
+
+          <div className="box-swiper mt-50 container">
+            <div className="swiper-container swiper-group-5 swiper">
+              <div className="swiper-wrapper pt-5">
+                <div
+                  className="swiper-slide hover-up">
+                  <Slider {...settings}>
+                    {categories.map((category, i) => (
+                      <div
+                        className="swiper-slide hover-up px-2 text-center"
+                        key={i}
+                      >
+                        <div className="item-logo justify-content-center">
+                          <div className="image-left">
+                            <Image
+                              src={category.image}
+                              className="py-2"
+                              alt=""
+                              height="50"
+                              width="50"
+                            />
+                          </div>
+                          <div className="text-info-right">
+                            <h4 className="">{category.name}</h4>
+                            <p className="font-xs">
+                              185<span> Available</span>
+                            </p>
+                          </div>
                         </div>
                       </div>
-                    </a>
-                  </div>
-                  <div className="swiper-slide hover-up">
-                    <a href="jobs-list.html">
-                      <div className="item-logo">
-                        <div className="image-left">
-                          <img
-                            alt="jobBox"
-                            src="assets/imgs/page/homepage1/lightning.svg"
-                          />
-                        </div>
-                        <div className="text-info-right">
-                          <h4>Software</h4>
-                          <p className="font-xs">
-                            1856<span> Jobs Available</span>
-                          </p>
-                        </div>
-                      </div>
-                    </a>
-                  </div>
-                  <div className="swiper-slide hover-up">
-                    <a href="jobs-grid.html">
-                      <div className="item-logo">
-                        <div className="image-left">
-                          <img
-                            alt="jobBox"
-                            src="assets/imgs/page/homepage1/human.svg"
-                          />
-                        </div>
-                        <div className="text-info-right">
-                          <h4>Human Resource</h4>
-                          <p className="font-xs">
-                            165<span> Jobs Available</span>
-                          </p>
-                        </div>
-                      </div>
-                    </a>
-                  </div>
-                  <div className="swiper-slide hover-up">
-                    <a href="jobs-grid.html">
-                      <div className="item-logo">
-                        <div className="image-left">
-                          <img
-                            alt="jobBox"
-                            src="assets/imgs/page/homepage1/management.svg"
-                          />
-                        </div>
-                        <div className="text-info-right">
-                          <h4>Management</h4>
-                          <p className="font-xs">
-                            965<span> Jobs Available</span>
-                          </p>
-                        </div>
-                      </div>
-                    </a>
-                  </div>
-                  <div className="swiper-slide hover-up">
-                    <a href="jobs-list.html">
-                      <div className="item-logo">
-                        <div className="image-left">
-                          <img
-                            alt="jobBox"
-                            src="assets/imgs/page/homepage1/retail.svg"
-                          />
-                        </div>
-                        <div className="text-info-right">
-                          <h4>Retail &amp; Products</h4>
-                          <p className="font-xs">
-                            563<span> Jobs Available</span>
-                          </p>
-                        </div>
-                      </div>
-                    </a>
-                  </div>
-                  <div className="swiper-slide hover-up">
-                    <a href="jobs-grid.html">
-                      <div className="item-logo">
-                        <div className="image-left">
-                          <img
-                            alt="jobBox"
-                            src="assets/imgs/page/homepage1/security.svg"
-                          />
-                        </div>
-                        <div className="text-info-right">
-                          <h4>Security Analyst</h4>
-                          <p className="font-xs">
-                            254<span> Jobs Available</span>
-                          </p>
-                        </div>
-                      </div>
-                    </a>
-                  </div>
-                  <div className="swiper-slide hover-up">
-                    <a href="jobs-grid.html">
-                      <div className="item-logo">
-                        <div className="image-left">
-                          <img
-                            alt="jobBox"
-                            src="assets/imgs/page/homepage1/content.svg"
-                          />
-                        </div>
-                        <div className="text-info-right">
-                          <h4>Content Writer</h4>
-                          <p className="font-xs">
-                            142<span> Jobs Available</span>
-                          </p>
-                        </div>
-                      </div>
-                    </a>
-                  </div>
-                  <div className="swiper-slide hover-up">
-                    <a href="jobs-list.html">
-                      <div className="item-logo">
-                        <div className="image-left">
-                          <img
-                            alt="jobBox"
-                            src="assets/imgs/page/homepage1/research.svg"
-                          />
-                        </div>
-                        <div className="text-info-right">
-                          <h4>Market Research</h4>
-                          <p className="font-xs">
-                            532<span> Jobs Available</span>
-                          </p>
-                        </div>
-                      </div>
-                    </a>
-                  </div>
+                    ))}
+                  </Slider>
                 </div>
-                <div className="swiper-pagination swiper-pagination-style-2"></div>
               </div>
             </div>
           </div>
