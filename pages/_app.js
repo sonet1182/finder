@@ -22,7 +22,6 @@ import { destroyToken, getToken } from "../services/auth/token";
 import publicApi from "../services/publicApi";
 import Image from "next/image";
 import Meta from "../components/Meta/Meta";
-import Script from "next/script";
 library.add(faCheckSquare, faCoffee, faUser);
 
 export const appContext = createContext();
@@ -78,15 +77,6 @@ function MyApp({ Component, pageProps }) {
   const [deferredPrompt, setDeferredPrompt] = useState(null);
   const [showInstallPrompt, setShowInstallPrompt] = useState(false);
 
-  useEffect(() => {
-    window.addEventListener("beforeinstallprompt", handleBeforeInstallPrompt);
-    return () => {
-      window.removeEventListener(
-        "beforeinstallprompt",
-        handleBeforeInstallPrompt
-      );
-    };
-  }, []);
 
   useEffect(() => {
     const storedDistricts = localStorage.getItem("districts");

@@ -15,7 +15,7 @@ import swal from "sweetalert";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import ReviewCard from "../../components/Tutor/ReviewCard";
-import StarRatingComponent from "react-star-rating-component";
+// import StarRatingComponent from "react-star-rating-component";
 import { FaStar, FaStarHalfAlt, FaStarO } from "react-icons/fa";
 import RatingComponent from "../../components/Tutor/RatingComponent";
 
@@ -359,11 +359,11 @@ function TutorDetails(req) {
                   <div className="mx-auto my-auto text-center">
                     <h6>Student Reviews</h6>
                     <div>
-                      <StarRatingComponent
+                      {/* <StarRatingComponent
                         name="rating"
                         starCount={5}
                         value={Math.round(avgRating ?? 0)}
-                      />
+                      /> */}
                     </div>
                     {avgRating ?? '0'} Out of 5<p>({reviewData ? reviewData.length : '0'} Ratings)</p>
                   </div>

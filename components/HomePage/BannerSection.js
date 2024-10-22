@@ -1,7 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaArrowRight, FaMapMarkedAlt, FaSearch } from "react-icons/fa";
+import Select from "react-select";
+const options = [
+  { value: "chocolate", label: "Chocolate" },
+  { value: "strawberry", label: "Strawberry" },
+  { value: "vanilla", label: "Vanilla" },
+];
 
 function BannerSection() {
+  const [selectedOption, setSelectedOption] = useState(null);
+
   return (
     <>
       <section className="section-box">
@@ -27,19 +35,24 @@ function BannerSection() {
               >
                 <form>
                   <div className="box-industry">
-                    <select className="form-input mr-10 select-active input-industry">
-                      <option value="0">All District</option>
-                      <option value="1">Dhaka</option>
-                      <option value="2">Rajshahi</option>
-                      <option value="2">Chittagong</option>
-                    </select>
+                    <Select
+                      className="form-input mr-10 select-active"
+                      defaultValue={selectedOption}
+                      onChange={setSelectedOption}
+                      options={options}
+                    />
                   </div>
-                  <select className="form-input mr-10 select-active">
-                    <option value="">All Type</option>
-                    <option value="AX">Aland Islands</option>
-                    <option value="ZM">Zambia</option>
-                    <option value="ZW">Zimbabwe</option>
-                  </select>
+                  <div className="box-industry">
+                    <Select
+                      className="form-input mr-10 select-active"
+                      defaultValue={selectedOption}
+                      onChange={setSelectedOption}
+                      options={options}
+                    />
+                  </div>
+
+
+
                   <input
                     className="form-input input-keysearch mr-10"
                     type="text"

@@ -1532,7 +1532,7 @@ input[type="time"],
 input[type="tel"] {
   border: 1px solid #e0e6f7;
   border-radius: 4px;
-  height: 45px;
+  /* height: 45px; */
   box-shadow: none;
   padding-left: 20px;
   font-size: 14px;
@@ -3209,12 +3209,8 @@ ul li:last-child .card-list-4 {
 }
 
 .banner-hero .block-banner .form-find .form-input {
-  border: 0px solid rgba(26, 15, 9, 0.1);
   border-radius: 0px;
-  padding: 10px 20px 10px 34px;
-  display: inline-block;
-  width: 100%;
-  height: 50px;
+  padding: 10px;
 }
 
 .banner-hero .block-banner .form-find .select2 {
@@ -3240,8 +3236,9 @@ ul li:last-child .card-list-4 {
 }
 
 .input-industry::before {
-  content: url(../assets/imgs/page/homepage1/banner-bg.jpeg); /* Replace with your icon URL */
-  margin-right: 8px; /* Adjust spacing between icon and text */
+  content: url(../assets/images/location.svg); /* Replace with your icon URL */
+  height: 8px;
+  width: 8px;
 }
 
 .type::before {
@@ -11654,4 +11651,11 @@ th {
   display: flex;
   justify-content: space-between;
   width: 100%;
+}
+
+.box-industry .css-1pahdxg-control{
+  border-style: none;
+}
+.box-industry .css-1s2u09g-control {
+  border-style: none;
 }

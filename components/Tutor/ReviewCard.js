@@ -3,7 +3,7 @@ import React from "react";
 import { useState } from "react";
 import altImg from "../../assets/images/user.webp";
 import picon from "../../public/favicon.ico";
-import StarRatingComponent from "react-star-rating-component";
+// import StarRatingComponent from "react-star-rating-component";
 
 function ReviewCard({ reviewData }) {
   const url = process.env.domain;
@@ -45,11 +45,11 @@ function ReviewCard({ reviewData }) {
                   : reviewData.student?.name}
               </div>
 
-              <StarRatingComponent
+              {/* <StarRatingComponent
                 name="rating"
                 starCount={5}
                 value={reviewData.rating}
-              />
+              /> */}
 
               <h6>{reviewData.review}</h6>
             </div>

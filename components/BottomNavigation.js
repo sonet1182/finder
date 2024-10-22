@@ -82,7 +82,7 @@ function BottomNavigation() {
           <Link href="/">
             <li
               onClick={() => setSelected("/")}
-              className={selected == "/" && "active"}
+              className={selected == "/" ? "active" : ""}
             >
               <a>
                 <span className="icon">
@@ -116,7 +116,7 @@ function BottomNavigation() {
           <Link href="/request-for-tutor">
             <li
               onClick={() => setSelected("/request-for-tutor")}
-              className={selected == "/request-for-tutor" && "active"}
+              className={selected == "/request-for-tutor" ? "active" : ""}
             >
               <a>
                 <span className="icon">
