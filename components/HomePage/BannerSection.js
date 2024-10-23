@@ -76,11 +76,6 @@ function BannerSection() {
       image: admission,
     },
     {
-      id: 4,
-      name: "সার্টিফিকেট",
-      image: admission,
-    },
-    {
       id: 5,
       name: "সার্টিফিকেট",
       image: admission,
@@ -88,6 +83,11 @@ function BannerSection() {
     {
       id: 6,
       name: "স্বজন",
+      image: admission,
+    },
+    {
+      id: 6,
+      name: "পোষা প্রাণি",
       image: admission,
     },
   ]);
@@ -105,12 +105,10 @@ function BannerSection() {
                 জিনিস অথবা ব্যাক্তি খুঁজে পান সহজেই
               </h1>
               <div
-                className="font-lg font-regular color-white mt-20 wow animate__animated animate__fadeInUp"
+                className="font-lg color-white mt-20 wow animate__animated animate__fadeInUp"
                 data-wow-delay=".1s"
               >
-                Each month, more than 3 million job seekers turn to website in
-                their search for work, making over 140,000 applications every
-                single day
+                হারানো জিনিসের খোঁজ নিন বা পাওয়া জিনিসের খবর জানাতে পোস্ট করুন এখানে ...
               </div>
               <div
                 className="form-find mt-40 wow animate__animated animate__fadeIn"
@@ -160,23 +158,15 @@ function BannerSection() {
                 className="list-tags-banner mt-20 wow animate__animated animate__fadeInUp"
                 data-wow-delay=".3s"
               >
-                <strong>Popular Searches:</strong>
-                <a href="#">Designer</a>, <a href="#">Web</a>,{" "}
-                <a href="#">IOS</a>, <a href="#">Developer</a>,{" "}
-                <a href="#">PHP</a>, <a href="#">Senior</a>,{" "}
-                <a href="#">Engineer</a>
+                <strong>জনপ্রিয় সার্চ:</strong>
+                <a href="#">সার্টিফিকেট</a>, {" "}
+                <a href="#">মোবাইল ফোন</a>,{" "}
+                <a href="#">পাসপোর্ট</a>,{" "}
+               <a href="#">বিড়াল</a>,{" "}
+                <a href="#">মানি ব্যাগ</a>
               </div>
             </div>
           </div>
-
-    
-                 
-
-                 
-
-       
-         
-          
 
           <div className="box-swiper mt-50 container">
             <div className="swiper-container swiper-group-5 swiper">
@@ -202,7 +192,7 @@ function BannerSection() {
                           <div className="text-info-right">
                             <h4 className="">{category.name}</h4>
                             <p className="font-xs">
-                              185<span> Available</span>
+                              185<span> রেজাল্ট</span>
                             </p>
                           </div>
                         </div>

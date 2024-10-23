@@ -23,13 +23,14 @@ function Footer() {
                 </a>
               </Link>
               <div className="mt-20 mb-20 font-xs color-text-paragraph-2">
-                TutorSheba.com is a platform where parents, students and tutors
-                can easily connect with each other. We provide qualified
-                Home/Online tutors to help your child with studies and helping
-                them perform better in exams. We are a group of 2,50,000+ Tutors
-                and 30,000+ satisfied parents/students in Dhaka, Chattagram,
-                Rajshahi, Sylhet, Khulna, Barishal, Rangpur, Mymensingh cities
-                for different academic and professional subjects.
+                <b className="text-primary">khujenow.com</b> একটি সম্প্রদায়-ভিত্তিক প্ল্যাটফর্ম, যেখানে
+                ব্যবহারকারীরা তাদের হারানো জিনিসপত্রের খোঁজ দিতে পারেন এবং যদি
+                কেউ কোনো হারানো জিনিস পেয়ে থাকে, সে তার তথ্য পোস্ট করতে পারে।
+                আমাদের লক্ষ্য হলো মানুষকে তাদের হারিয়ে যাওয়া মূল্যবান জিনিস
+                ফিরে পেতে সাহায্য করা। আমরা বিশ্বাস করি, সকলের সম্মিলিত
+                প্রচেষ্টার মাধ্যমে হারানো জিনিসপত্র সহজেই খুঁজে পাওয়া সম্ভব।
+                খুঁজে নাও আপনাকে সেই সুযোগটি করে দেয়, যাতে হারানো জিনিস দ্রুত
+                ফিরে আসে।
               </div>
               <div className="footer-social">
                 <a
@@ -96,7 +97,7 @@ function Footer() {
                     Contact
                   </Link>
                 </li>
-                <li>
+                {/* <li>
                   <Link passHref href="/uddokta/home">
                     <b className="text-purple link">
                       {" "}
@@ -108,7 +109,7 @@ function Footer() {
                   <Link passHref href="/logo">
                     <img alt="LinkedIn icon" src="favicon.png" />
                   </Link>
-                </li>
+                </li> */}
               </ul>
             </div>
 

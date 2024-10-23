@@ -3209,8 +3209,8 @@ ul li:last-child .card-list-4 {
 }
 
 .banner-hero .block-banner .form-find .form-input {
-  border-radius: 0px;
-  padding: 10px;
+  /* border-radius: 0px;
+  padding: 10px; */
 }
 
 .banner-hero .block-banner .form-find .select2 {
@@ -3596,7 +3596,7 @@ ul li:last-child .card-list-4 {
   font-family: Nunito, sans-serif;
   font-style: normal;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 18px;
   color: #05264e;
   display: block;
@@ -9624,13 +9624,15 @@ ul li:last-child .card-list-4 {
 }
 
 .navbar_bg {
-  background: linear-gradient(
+  /* background: linear-gradient(
     90deg,
     rgba(84, 6, 84, 1) 0%,
     rgba(204, 13, 133, 1) 50%,
     rgba(84, 6, 84, 1) 100%,
     rgba(0, 212, 255, 1) 100%
-  );
+  ); */
+
+  background-color: #0E315D;
 }
 
 .gradient_bg {
@@ -10105,9 +10107,8 @@ a .icon:hover {
 
 /* Banner Button */
 .button2 {
-  margin-top: 3px;
   min-width: 172px;
-  min-height: 45px;
+  min-height: 38px;
   /* font-family: 'Nunito', sans-serif; */
   font-size: 16px;
   /* text-transform: uppercase; */
@@ -11660,10 +11661,30 @@ th {
   border-style: none;
 }
 
-.css-2613qy-menu{
-  z-index: 9999;
+.about-container {
+  padding: 20px;
+  background-color: #f9f9f9; /* Light background */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  max-width: 800px; /* Maximum width */
+  /* margin: 20px auto; */
 }
 
-#react-select-2-listbox{
-  z-index: 9999;
+.about-title {
+  font-size: 2rem; /* Title size */
+  margin-bottom: 15px; /* Space below the title */
+  color: #333; /* Title color */
+  text-align: center; /* Center title */
+}
+
+.about-content {
+  font-size: 1.1rem; /* Content size */
+  line-height: 1.6; /* Line height for readability */
+  color: #555; /* Content color */
+  margin-bottom: 15px; /* Space below each paragraph */
+}
+
+.about-content ul {
+  list-style-type: disc; 
+  padding-left: 20px; /* Indent for list */
 }

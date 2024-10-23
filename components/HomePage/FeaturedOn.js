@@ -81,14 +81,14 @@ function FeaturedOn() {
   return (
     <>
       <section className="section-box">
-        <div className="light-bg wow animate__animated animate__fadeIn pt-70">
+        <div className="light-bg wow animate__animated animate__fadeIn pt-30">
           <div className="container">
             <div className="">
               <h2 className="section-title mb-10 wow animate__animated animate__fadeInUp">
-                We were <span className="text-purple">featured</span> on:
+                আমাদের সৌজন্যে:
               </h2>
             </div>
-            <div className="box-swiper mt-50">
+            <div className="box-swiper mt-30">
               <div className="swiper-container swiper-group-5 swiper">
                 <div className="swiper-wrapper pb-30">
                   <div className="swiper-slide">

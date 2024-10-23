@@ -64,7 +64,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="navbar navbar-expand-lg bg-light shadow-sm navbar_bg">
+      <nav className="navbar navbar-expand-lg shadow-sm navbar_bg">
         <div className="container">
           <Link passHref href="/">
             <Image
@@ -99,7 +99,7 @@ const Navbar = () => {
                     currentRoute === "/tuition-list" ? "active" : ""
                   }`}
                 >
-                  TUITION JOBS
+                  হারানো জিনিস
                 </a>
               </li>
 
@@ -110,7 +110,7 @@ const Navbar = () => {
                       router.pathname === "/tutor_list" ? "active" : ""
                     }`}
                   >
-                    PREMIUM TUTORS
+                   খুঁজে পাওয়া জিনিস
                   </a>
                 </span>
               </li>
@@ -122,13 +122,13 @@ const Navbar = () => {
                     router.pathname === "/request-for-tutor" ? "active" : ""
                   }`}
                 >
-                  TUTOR REQUEST
+                  পোস্ট করুন
                 </a>
               </li>
 
               <li className="nav-item">
                 <a className="nav-link" href="https://course.tutorsheba.com/">
-                  COURSES
+                  যোগাযোগ করুন
                 </a>
               </li>
             </ul>
@@ -223,7 +223,7 @@ const Navbar = () => {
                         className="btn mx-2 hover-up"
                         style={{ border: "1px solid #fff" }}
                       >
-                        <FaSignOutAlt /> Register
+                        <FaSignOutAlt /> রেজিস্টার
                       </a>
                     </Link>
                   </li>
@@ -234,7 +234,7 @@ const Navbar = () => {
                         className="btn btn-default2 hover-up link"
                         style={{ border: "1px solid #fff" }}
                       >
-                        <FaSignInAlt /> Login
+                        <FaSignInAlt /> লগিন
                       </span>
                     </Link>
                   </li>
