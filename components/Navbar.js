@@ -92,11 +92,11 @@ const Navbar = () => {
               <li className="nav-item link">
                 <a
                   onClick={() => {
-                    routingHandler("/tuition-list");
+                    routingHandler("/lost-post");
                     localStorage.setItem("job_page", 1);
                   }}
                   className={`nav-link ${
-                    currentRoute === "/tuition-list" ? "active" : ""
+                    currentRoute === "/lost-post" ? "active" : ""
                   }`}
                 >
                   হারানো জিনিস
@@ -157,7 +157,7 @@ const Navbar = () => {
                               onClick={() => setToggle(false)}
                               className="dropdown-item"
                             >
-                              <FaUserAlt /> Profile
+                              <FaUserAlt /> প্রোফাইল
                             </a>
                           </Link>
                         </li>
@@ -168,7 +168,7 @@ const Navbar = () => {
                               onClick={() => setToggle(false)}
                               className="dropdown-item"
                             >
-                              <FaUserAlt /> Profile
+                              <FaUserAlt /> প্রোফাইল
                             </a>
                           </Link>
                         </li>
@@ -179,7 +179,7 @@ const Navbar = () => {
                               onClick={() => setToggle(false)}
                               className="dropdown-item"
                             >
-                              <FaUserAlt /> Profile
+                              <FaUserAlt /> প্রোফাইল
                             </a>
                           </Link>
                         </li>
@@ -190,7 +190,7 @@ const Navbar = () => {
                           onClick={() => setToggle(false)}
                           className="dropdown-item"
                         >
-                          <FaSignOutAlt /> Logout
+                          <FaSignOutAlt /> লগ আউট
                         </a>
                       </li>
                     </ul>
@@ -246,7 +246,7 @@ const Navbar = () => {
                       className="btn mx-2 hover-up link text-light"
                       style={{ border: "1px solid #fff" }}
                     >
-                      <FaEdit /> Register
+                      <FaEdit /> রেজিস্টার
                     </span>
 
                     <span
@@ -254,7 +254,7 @@ const Navbar = () => {
                       className="btn btn-default2 hover-up link"
                       style={{ border: "1px solid #fff" }}
                     >
-                      <FaSignInAlt /> Login
+                      <FaSignInAlt /> লগিন
                     </span>
                   </li>
                 </>

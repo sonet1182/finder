@@ -15,10 +15,12 @@ import { useEffect, useRef } from "react";
 import publicApi from "../../services/publicApi";
 import JobCard from "../../components/Job/JobCard";
 import JobSkeleton from "../../components/Job/JobSkeleton";
+import noDataImg from "../../assets/vector/no_data.svg";
 import Pagination from "react-js-pagination";
 import { Form } from "react-bootstrap";
 import Image from "next/image";
 import swal from "sweetalert";
+import Meta from "../../components/Meta/Meta";
 
 function TuitionList() {
   const [loading, setLoading] = useState(true);
@@ -309,13 +311,14 @@ function TuitionList() {
 
   const filterBox = (
     <>
+      <Meta title="হারানো বিজ্ঞপ্তি | খুঁজে নাও" />
       <div className="sidebar-filters">
         <div className="filter-block head-border mb-20">
-          <h5>Advance Filter </h5>
+          <h5>ফিল্টার করুন</h5>
         </div>
 
         <div className="filter-block mb-10">
-          <h6 className="medium-heading mb-15">Search By Job Id</h6>
+          <h6 className="medium-heading mb-15">পোস্ট আইডি</h6>
           <div className="form-group">
             <input
               type="text"
@@ -327,7 +330,7 @@ function TuitionList() {
         </div>
 
         <div className="filter-block mb-10">
-          <h6 className="medium-heading mb-15">Search By Date</h6>
+          <h6 className="medium-heading mb-15">হারানোর তারিখ (সাম্ভাব্য)</h6>
           <div className="form-group">
             <div className="row">
               <div className="col-md-6">
@@ -338,17 +341,13 @@ function TuitionList() {
                 />
               </div>
 
-              {/* <div className="pt-2 col-md-2">To</div> */}
-
               <div className="col-md-6">
-              <input
-                type="date"
-                className="form-control mb-2"
-                onChange={endDateHandler}
-              />
+                <input
+                  type="date"
+                  className="form-control mb-2"
+                  onChange={endDateHandler}
+                />
               </div>
-
-              
             </div>
           </div>
         </div>
@@ -464,7 +463,7 @@ function TuitionList() {
 
         <div className="filter-block mb-10">
           <div className="form-group select-style select-style-icon">
-            <h6 className="medium-heading mb-15">Select District </h6>
+            <h6 className="medium-heading mb-15">বিভাগ </h6>
             <Form.Select
               name="districts"
               className="districts single-select"
@@ -472,7 +471,7 @@ function TuitionList() {
               value={selectedDistrict}
             >
               <option className="" value="">
-                All
+                সকল বিভাগ
               </option>
               {districts.map((district, i) => (
                 <option key={i} value={district.id}>
@@ -485,14 +484,35 @@ function TuitionList() {
         </div>
         <div className="filter-block mb-10">
           <div className="form-group select-style select-style-icon">
-            <h6 className="medium-heading mb-15">Select Area</h6>
+            <h6 className="medium-heading mb-15">জেলা </h6>
+            <Form.Select
+              name="districts"
+              className="districts single-select"
+              onChange={handleDistrict}
+              value={selectedDistrict}
+            >
+              <option className="" value="">
+                সকল জেলা
+              </option>
+              {districts.map((district, i) => (
+                <option key={i} value={district.id}>
+                  {district.districtName}
+                </option>
+              ))}
+              ;
+            </Form.Select>
+          </div>
+        </div>
+        <div className="filter-block mb-10">
+          <div className="form-group select-style select-style-icon">
+            <h6 className="medium-heading mb-15">উপজেলা/থানা</h6>
             <Form.Select
               name="area"
               className="area single-select"
               onChange={handleArea}
               value={selectedArea}
             >
-              <option value="">All</option>
+              <option value="">সকল উপজেলা</option>
               {areas.map((area, i) => (
                 <option key={i} value={area.id}>
                   {area.areaName}
@@ -510,7 +530,7 @@ function TuitionList() {
               onChange={handleMedium}
               value={selectedMedium}
             >
-              <option value="">All</option>
+              <option value="">সকল</option>
               {mediums.map((medium, i) => (
                 <option key={i} value={medium.id}>
                   {medium.mediumName}
@@ -528,7 +548,7 @@ function TuitionList() {
               onChange={handleClass}
               value={selectedClass}
             >
-              <option value="">All</option>
+              <option value="">সকল</option>
               {classes.map((s_class, i) => (
                 <option key={i} value={s_class.id}>
                   {s_class.className}
@@ -614,12 +634,13 @@ function TuitionList() {
                   <div className="row">
                     <div className="col-6">
                       <span className="text-small text-showing">
-                        Showing
+                        আপনি দেখতে পাচ্ছেন{" "}
                         <strong>
-                          {jobs?.from}-{jobs?.to}
+                          {" "}
+                          {jobs?.from}-{jobs?.to}{" "}
                         </strong>
-                        of <strong>{jobs.total} </strong>
-                        jobs
+                        &nbsp; টি পোস্ট, সর্বমোট <strong>{jobs.total} </strong>{" "}
+                        টি পোস্টের মধ্য
                       </span>
                     </div>
                     <div className="col-6 text-end">

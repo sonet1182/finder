@@ -5,7 +5,7 @@ import MasterLayout from "../Layouts/MasterLayout";
 const Home = () => {
   return (
     <>
-      <Meta title="Home | Tutor Sheba" />
+      <Meta title="হোম | খুঁজে নাও" />
       <MainContent />
     </>
   );

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import sideImg from "../../assets/vector/Online learning-pana.svg";
+import sideImg from "../../assets/vector/about_us.png";
 import { FaArrowRight, FaSearch } from "react-icons/fa";
 import Link from "next/link";
 

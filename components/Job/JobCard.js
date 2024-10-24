@@ -25,18 +25,17 @@ function JobCard({ job }) {
         <div className="card-grid-2-image-left d-flex">
           <div className="right-info">
             <a className="name-job" href="">
-              <FaMapMarkerAlt /> {job.s_area}, &nbsp;
-              {job.districts?.districtName}
+              <FaMapMarkerAlt /> এরিয়া, উপজেলা, জেলা
             </a>
           </div>
 
-          <span className="btn btn-grey-small ml-auto ">Job ID: {job.id}</span>
+          <span className="btn btn-grey-small ml-auto ">পোস্ট আইডি: {job.id}</span>
         </div>
 
         <div className="card-block-info">
           <Link href={`/tuition-list/view/${job.id}`}>
             <h4 className="text-ellipsis" style={{ cursor: "pointer" }}>
-              {job.title}
+              একটি পাসপোর্ট হারানো গিয়েছে
             </h4>
           </Link>
 
@@ -62,64 +61,18 @@ function JobCard({ job }) {
 
           <div className="job-details mt-3">
             <div className="row">
-              <div className="col-md-4 col-6">
-                <div className="pb-2">
-                  <FaSchool /> Medium:<br></br>
-                  <strong> {job?.s_medium}</strong>
-                </div>
-              </div>
-              <div className="col-md-4 col-6">
-                <div className="pb-2">
-                  <FaElementor /> Class: <br></br>
-                  <strong> {job?.s_class}</strong>
-                </div>
-              </div>
-
-              <div className="col-md-4 col-6">
-                <div className="pb-2">
-                  <FaUserTie /> Preferred Tutor:<br></br>
-                  <strong>{job?.t_gender}</strong>
-                </div>
-              </div>
-
-              <div className="col-md-4 col-6">
-                <div className="pb-2">
-                  <FaCalendar /> Tutoring Days:<br></br>
-                  <strong>{job?.t_days} </strong>
-                </div>
-              </div>
-
-              <div className="col-md-4 col-6">
-                <div className="pb-2">
-                  <FaGraduationCap /> Subject: <br></br>
-                  {job?.t_subject.split(",").map((subject) => (
-                    <span
-                      className="badge badge-success mr-1"
-                      key={subject.trim()}
-                    >
-                      {subject.trim()}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              <div className="col-md-4 col-6">
-                <div className="pb-2">
-                  <FaMoneyBill /> Salary: <br></br>
-                  <span className="card-text-price text-primary">
-                    {job.t_salary >= 1
-                      ? Number(job.t_salary).toLocaleString() + " Tk"
-                      : "Negotiable"}
-                  </span>
-                  <span className="text-muted">/Month</span>
-                </div>
-              </div>
+              <div className="col-md-4"></div>
+              <div className="col-md-8 truncate-text">
+  গত ৩০ জুলাই, ২০২৮ - দুপুর ১২ টার দিকে এয়ার পোর্ট থেকে ফেরাএ পথেন সি,এন,জি থেকে নামার সময় আমিয়া ভুল বসত আমার হ্যান্ড ব্যাগ টা ফুলে ফেলে রেখে আসি। 
+  ব্যগ টি তে কিছু নগদ অর্থ সহ আমার পাস্পোর্ট টি হারিয়ে ফেলেছি। যদি কোন সহৃদয়
+  বান ব্যাকিত ব্যাগটি পেয়ে থাকেন তবে অতিওদ্রুত যোগাযোগ করার জন্য অনুড়ধ করা হল
+</div>
             </div>
           </div>
 
           <div className="card-2-bottom d-flex">
             <p className="font-sm color-text-paragraph mt-2">
-              Posted at: {moment(job.created_at).format("LL")}
+              পোস্টেড: {moment(job.created_at).format("LL")}
             </p>
 
             <div className="ml-auto">
@@ -133,7 +86,7 @@ function JobCard({ job }) {
                     className="btn btn-1 gradient_bg text-light"
                     style={{ fontSize: "15px" }}
                   >
-                    View Details
+                    বিস্তারিত দেখুন
                   </div>
                 </Link>
               )}

@@ -11688,3 +11688,11 @@ th {
   list-style-type: disc; 
   padding-left: 20px; /* Indent for list */
 }
+
+.truncate-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
