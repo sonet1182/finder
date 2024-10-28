@@ -6,8 +6,6 @@ import qrImg from "../assets/images/tsqrcode.png";
 import playStore from "../assets/images/playStore.svg";
 import bkash from "../assets/images/bkash.svg";
 import ytIcon from "../assets/images/youtube_1384060.png";
-import { FaHandshake } from "react-icons/fa";
-import picon from "../public/favicon.png";
 
 function Footer() {
   return (
@@ -164,7 +162,7 @@ function Footer() {
             <div className="row">
               <div className="col-12 col-md-6 ">
                 <span className="font-xs color-text-paragraph">
-                  Copyright &copy; 2022. Tutor Sheba all right reserved
+                  Copyright &copy; 2022. Khuje Now all right reserved
                 </span>
               </div>
               <div className="col-12 col-md-6  ">

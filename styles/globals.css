@@ -1532,7 +1532,7 @@ input[type="time"],
 input[type="tel"] {
   border: 1px solid #e0e6f7;
   border-radius: 4px;
-  /* height: 45px; */
+  height: 45px;
   box-shadow: none;
   padding-left: 20px;
   font-size: 14px;
@@ -10719,7 +10719,8 @@ th {
 
 .pt-active {
   border: 2px solid var(--theme-primary-color);
-  color: var(--theme-primary-color);
+  background: #0e315d;
+  color: #fff!important;
 }
 
 .form-group label {

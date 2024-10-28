@@ -40,19 +40,7 @@ function JobCard({ job }) {
           </Link>
 
           <div className="mt-4 mb-3">
-            <span className="t-type">
-              {job.tutoring_type == "Home" ? (
-                <>
-                  <FaHome /> {job.tutoring_type}
-                </>
-              ) : (
-                <>
-                  <FaDesktop /> {job.tutoring_type}
-                </>
-              )}{" "}
-              {job.s_number > 1 ? " + Group" : ""}
-              Tutoring
-            </span>{" "}
+            
             <span className="publish">
               <FaNewspaper />{" "}
               {job.created_at && moment(job.created_at).fromNow()}

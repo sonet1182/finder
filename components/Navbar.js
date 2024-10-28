@@ -104,10 +104,10 @@ const Navbar = () => {
               </li>
 
               <li className="nav-item link">
-                <span className="link" onClick={tutorSearchHandler}>
+                <span className="link" onClick={() => routingHandler("/found-post")}>
                   <a
                     className={`nav-link ${
-                      router.pathname === "/tutor_list" ? "active" : ""
+                      router.pathname === "/found-post" ? "active" : ""
                     }`}
                   >
                    খুঁজে পাওয়া জিনিস
@@ -117,9 +117,9 @@ const Navbar = () => {
 
               <li className="nav-item link">
                 <a
-                  onClick={() => routingHandler("/request-for-tutor")}
+                  onClick={() => routingHandler("/create-post")}
                   className={`nav-link ${
-                    router.pathname === "/request-for-tutor" ? "active" : ""
+                    router.pathname === "/create-post" ? "active" : ""
                   }`}
                 >
                   পোস্ট করুন

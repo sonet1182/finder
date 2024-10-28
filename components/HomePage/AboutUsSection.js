@@ -22,9 +22,7 @@ function AboutUsSection() {
               <Image src={sideImg} alt="svg" />
             </div>
 
-            <p className="font-lg color-text-paragraph-2 wow animate__animated animate__fadeInUp text-center pc-hide">
-              Find Your Tution Jobs, in your area
-            </p>
+            
           </div>
           <div className="col-md-6">
             <div
