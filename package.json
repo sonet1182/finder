@@ -31,6 +31,7 @@
     "react-bootstrap": "^2.5.0",
     "react-custom-checkbox": "^2.0.2",
     "react-dom": "18.2.0",
+    "react-dropzone": "^14.2.10",
     "react-headroom": "^3.2.0",
     "react-icons": "^4.4.0",
     "react-js-pagination": "^3.0.2",

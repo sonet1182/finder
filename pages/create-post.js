@@ -1,130 +1,47 @@
-import React, { useContext, useState } from "react";
-import { Form } from "react-bootstrap";
+import React, { useCallback, useContext, useState } from "react";
 import MasterLayout from "../Layouts/MasterLayout";
 import Meta from "../components/Meta/Meta";
 import { appContext } from "./_app";
-import ReactSelect from "react-select";
-import publicApi from "../services/publicApi";
 import { useEffect } from "react";
-import { toast } from "react-toastify";
-import swal from "sweetalert";
 import Image from "next/image";
-import ShortBio from "../components/ProfilePage/ShortBio";
+import { useDropzone } from "react-dropzone";
+import { FaCloudUploadAlt, FaTimes, FaTrashAlt } from "react-icons/fa";
 
 function CreatePost() {
   const value = useContext(appContext);
 
   const [activeTab, setActiveTab] = useState("lost");
-
   const [errors, setErrors] = useState();
-
   const [studentName, setStudentName] = useState("");
   const [studentPhone, setStudentPhone] = useState("");
+  const [images, setImages] = useState([]);
 
-  const [districts, setDistricts] = useState([]);
-  const [selectedDistrict, setSelectedDistrict] = useState("");
+  const { getRootProps, getInputProps } = useDropzone({
+    onDrop: useCallback((acceptedFiles) => {
+      acceptedFiles.forEach((file) => {
+        const reader = new FileReader();
+        reader.onload = () => {
+          setImages((prev) => [...prev, { file, preview: reader.result }]);
+        };
+        reader.readAsDataURL(file);
+      });
+    }, []),
+  });
 
-  const [areas, setAreas] = useState([]);
-  const [selectedArea, setSelectedArea] = useState([]);
+  const removeImage = (index) => {
+    setImages(images.filter((_, i) => i !== index));
+  };
 
-  const [mediums, setMediums] = useState([]);
-  const [selectedMedium, setSelectedMedium] = useState("");
-
-  const [classes, setClasses] = useState([]);
-  const [selectedClass, setSelectedClass] = useState("");
-
-  const newArray = [];
-
-  const createCustomArray = (old_array) => {
-    old_array.forEach(function (item) {
-      newArray.push({ label: item.areaName, value: item.areaName });
+  const uploadImages = async () => {
+    const formData = new FormData();
+    images.forEach((image) => {
+      formData.append("images[]", image.file);
     });
-  };
 
-  const handleDistrict = async (e) => {
-    e.persist();
-
-    setAreas([]);
-    setSelectedArea([]);
-
-    setSelectedDistrict(e.target.value);
-
-    const response = await publicApi.get(`api/area-list/${e.target.value}`);
-    if (response.status === 200) {
-      // createCustomArray(response.data.data);
-      setAreas(response.data.data);
-    } else {
-      console.log("Server Error");
-    }
-  };
-
-  const getDistricts = async (e) => {
-    const response = await publicApi.get("api/district-list");
-    if (response.status === 200) {
-      setDistricts(response.data.data);
-    } else {
-      console.log("Server Error");
-    }
-  };
-
-  useEffect(() => {
-    getMediums();
-    getDistricts();
-  }, []);
-
-  const getMediums = async (e) => {
-    const response = await publicApi.get("api/medium-list");
-    if (response.status === 200) {
-      setMediums(response.data.data);
-    } else {
-      console.log("Server Error");
-    }
-  };
-
-  const handleMedium = async (e) => {
-    e.persist();
-
-    setSelectedMedium(e.target.value);
-    const response = await publicApi.get(`api/class-list/${e.target.value}`);
-    if (response.status === 200) {
-      setClasses(response.data.data);
-    } else {
-      console.log("Server Error");
-    }
-  };
-
-  const handleClass = async (e) => {
-    e.persist();
-    setSelectedClass(e.target.value);
-  };
-
-  const submitHandler = async (e) => {
-    setErrors();
-    e.preventDefault();
-
-    const data = {
-      s_fullName: studentName,
-      s_phoneNumber: studentPhone,
-      s_districts: selectedDistrict,
-      s_area: selectedArea,
-      s_medium: selectedMedium,
-      s_class: selectedClass,
-    };
-
-    const response = await publicApi.post(`api/tutor_request`, data);
-    if (response.data.status == 200) {
-      swal("Welcome", response.data.message, "success");
-
-      setStudentName("");
-      setStudentPhone("");
-      setSelectedArea([]);
-      setSelectedDistrict([]);
-      setMediums([]);
-      setClasses([]);
-    } else {
-      setErrors(response.data.message);
-      swal("Welcome", response.data.message, "error");
-    }
+    await fetch("/api/upload-images", {
+      method: "POST",
+      body: formData,
+    });
   };
 
   return (
@@ -185,7 +102,7 @@ function CreatePost() {
                 <form
                   className="contact-form-style mt-30"
                   id="contact-form"
-                  onSubmit={submitHandler}
+                  // onSubmit={submitHandler}
                 >
                   <h4 className="mb-2">হারানো বস্তু/ব্যাক্তির বিবরণঃ</h4>
                   <div
@@ -215,7 +132,8 @@ function CreatePost() {
                     <div className="col-lg-6 col-md-6">
                       <div className="input-style mb-20">
                         <label htmlFor="s_districts">
-                          বস্তু/ব্যক্তির নাম / ডকুমেন্টস এর নম্বর <span className="required">*</span>
+                          বস্তু/ব্যক্তির নাম / ডকুমেন্টস এর নম্বর{" "}
+                          <span className="required">*</span>
                         </label>
                         <input
                           className="font-sm color-text-paragraph-2"
@@ -232,7 +150,10 @@ function CreatePost() {
                         <label htmlFor="s_districts">
                           বিস্তারিত বিবরণ <span className="required">*</span>
                         </label>
-                        <textarea rows={4} placeholder="বস্তুর আকার, আকৃতি, পরিমান অথবা পরিমাপ, হারিয়ে যাওয়ার আগের অবস্থা, হারানোর সাম্ভাব্য কারণ, চেনার উপায় । । হারানো ব্যাক্তির বয়স, চেহারার গঠন, ঊচ্চতা, গায়ের রঙ, সাম্ভাব্য কারন, পরনের পোষাক, পোষাকের রঙ, সহজে চেনার উপায় ইত্যাদি ..."></textarea>
+                        <textarea
+                          rows={4}
+                          placeholder="বস্তুর আকার, আকৃতি, পরিমান অথবা পরিমাপ, হারিয়ে যাওয়ার আগের অবস্থা, হারানোর সাম্ভাব্য কারণ, চেনার উপায় । । হারানো ব্যাক্তির বয়স, চেহারার গঠন, ঊচ্চতা, গায়ের রঙ, সাম্ভাব্য কারন, পরনের পোষাক, পোষাকের রঙ, সহজে চেনার উপায় ইত্যাদি ..."
+                        ></textarea>
                       </div>
                     </div>
                     <div className="col-lg-6 col-md-6">
@@ -240,17 +161,41 @@ function CreatePost() {
                         <label htmlFor="s_districts">
                           ছবি <span className="required">*</span>
                         </label>
-                        <input
-                          className="font-sm color-text-paragraph-2"
-                          name="date"
-                          type="file"
-                        />
+                        <div>
+                          <div {...getRootProps({ className: "dropzone" })}>
+                            <input {...getInputProps()} />
+                            <FaCloudUploadAlt className="upload-icon" />
+                            <p>
+                              Drag & drop some files here, or click to select
+                              files
+                            </p>
+                          </div>
+                          <div className="preview-container">
+                            {images.map((image, index) => (
+                              <div key={index} className="preview-item">
+                                <Image
+                                  src={image.preview}
+                                  alt="preview"
+                                  height="100"
+                                  width="100"
+                                />
+                                <button
+                                  className="remove-button"
+                                  onClick={() => removeImage(index)}
+                                >
+                                  <FaTrashAlt/>
+                                </button>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
                       </div>
                     </div>
                     <div className="col-lg-6 col-md-6">
                       <div className="input-style mb-20">
                         <label htmlFor="s_districts">
-                          হারানোর তারিখ (সাম্ভাব্য) <span className="required">*</span>
+                          হারানোর তারিখ (সাম্ভাব্য){" "}
+                          <span className="required">*</span>
                         </label>
                         <input
                           className="font-sm color-text-paragraph-2"
@@ -262,7 +207,8 @@ function CreatePost() {
                     <div className="col-lg-6 col-md-6">
                       <div className="input-style mb-20">
                         <label htmlFor="s_districts">
-                          হারানোর সময় (সাম্ভাব্য) <span className="required">*</span>
+                          হারানোর সময় (সাম্ভাব্য){" "}
+                          <span className="required">*</span>
                         </label>
                         <input
                           className="font-sm color-text-paragraph-2"
@@ -323,11 +269,11 @@ function CreatePost() {
 
                     <h4 className="my-4">অতিরিক্ত তথ্যঃ</h4>
 
-
                     <div className="col-lg-6 col-md-6">
                       <div className="input-style mb-20">
                         <label htmlFor="s_districts">
-                          খোঁজ দানকারীর পুরস্কার/সম্মাননা <span className="required">*</span>
+                          খোঁজ দানকারীর পুরস্কার/সম্মাননা{" "}
+                          <span className="required">*</span>
                         </label>
                         <input
                           className="font-sm color-text-paragraph-2"
@@ -341,7 +287,8 @@ function CreatePost() {
                     <div className="col-lg-6 col-md-6">
                       <div className="input-style mb-20">
                         <label htmlFor="s_districts">
-                          অতিরিক্ত সংযুতি / নোট <span className="required">*</span>
+                          অতিরিক্ত সংযুতি / নোট{" "}
+                          <span className="required">*</span>
                         </label>
                         <input
                           className="font-sm color-text-paragraph-2"
@@ -352,8 +299,6 @@ function CreatePost() {
                     </div>
 
                     <h4 className="my-4">যোগাযোগের ঠিকানাঃ</h4>
-
-                    
 
                     <div className="col-lg-4 col-md-4">
                       <div className="input-style mb-20">
@@ -394,7 +339,8 @@ function CreatePost() {
                     <div className="col-lg-6 col-md-6">
                       <div className="input-style mb-20">
                         <label htmlFor="s_districts">
-                          সরাসরি যোগাযোগের স্থান <span className="required">*</span>
+                          সরাসরি যোগাযোগের স্থান{" "}
+                          <span className="required">*</span>
                         </label>
                         <input
                           className="font-sm color-text-paragraph-2"
@@ -418,8 +364,6 @@ function CreatePost() {
                       </div>
                     </div>
 
-
-                    
                     <div className="col-md-12">
                       <label className="ml-20">
                         <input
