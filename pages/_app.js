@@ -143,7 +143,7 @@ function MyApp({ Component, pageProps }) {
             <Image alt="" src={picon} height="50" width="50" />
             <h5 className="pb-3">
               Install{" "}
-              <span className="text-purple"> &quot;Tutor Sheba&quot; </span> on
+              <span className="text-purple"> &quot;Khuje Now&quot; </span> on
               your home screen
             </h5>
             <button

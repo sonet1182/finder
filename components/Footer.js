@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import Logo from "../assets/images/logo/logo.png";
-import qrImg from "../assets/images/tsqrcode.png";
+import qrImg from "../assets/images/qr_code.png";
 import playStore from "../assets/images/playStore.svg";
 import bkash from "../assets/images/bkash.svg";
 import ytIcon from "../assets/images/youtube_1384060.png";
@@ -151,7 +151,7 @@ function Footer() {
                   Our Android App is available right now. Scan the QR Code or
                   Click the Button to Download
                 </p>
-                <a href="https://play.google.com/store/apps/details?id=com.esapath.tutorsheba">
+                <a href="https://graphql.org/learn/queries/">
                   <Image src={playStore} height="60" width="160" />
                 </a>
               </div>

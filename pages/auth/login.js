@@ -1,12 +1,12 @@
 import axios from "axios";
-import { useContext, useState } from "react";
 import Link from "next/link";
 import React from "react";
+import AuthLayout from "../../Layouts/AuthLayout";
+import { useContext, useState } from "react";
 import { useRouter } from "next/router";
 import { toast } from "react-toastify";
 import { appContext } from "../_app";
 import { FaCheck, FaSpinner } from "react-icons/fa";
-import AuthLayout from "../../Layouts/AuthLayout";
 import { saveData, saveToken } from "../../services/auth/token";
 import sideImg from "../../assets/vector/Computer login-amico.svg";
 import teacherImg from "../../assets/vector/teacher.png";
@@ -55,7 +55,6 @@ function Login() {
           closeOnClick: true,
         });
         router.push("/profile");
-
       } else if (response.data.status === 401) {
         setLoading(false);
         toast.warning(response.data.message, {
@@ -78,7 +77,7 @@ function Login() {
         });
       }
     });
-  }
+  };
 
   const studentLogin = (data) => {
     axios.post(`/api/stu_login`, data).then((response) => {
@@ -100,7 +99,6 @@ function Login() {
           closeOnClick: true,
         });
         router.push("/student/profile");
-
       } else if (response.data.status === 401) {
         setLoading(false);
         toast.warning(response.data.message, {
@@ -123,7 +121,7 @@ function Login() {
         });
       }
     });
-  }
+  };
 
   const loginSubmit = (e) => {
     e.preventDefault();
@@ -143,9 +141,9 @@ function Login() {
         password: loginInput.password,
       };
 
-      if(checked == "tutor"){
+      if (checked == "tutor") {
         tutorLogin(data);
-      }else if(checked == "student"){
+      } else if (checked == "student") {
         studentLogin(data);
       }
     }
@@ -172,96 +170,17 @@ function Login() {
                 className="card px-4 py-3 form-find mt-10 mb-10 wow animate__animated animate__fadeIn "
                 data-wow-delay=".2s"
               >
-                <h4 className="headline text-center py-3">Login</h4>
-
-                <div
-                  className="row my-3"
-                  style={{ padding: "8px 0px", background: "#e0e6f6" }}
-                >
-                  <div className="col-6">
-                    <div
-                      onClick={() => handleCheckbox("tutor")}
-                      className={
-                        checked == "tutor"
-                          ? `custom-checkbox`
-                          : `custom-checkbox`
-                      }
-                    >
-                      <Image
-                        src={teacherImg}
-                        alt="teacher"
-                        height={50}
-                        width={50}
-                      />
-                      <div className="ml-10 item-center">
-                        <Checkbox
-                          checked={checked == "tutor" ? true : false}
-                          value="tutor"
-                          icon={
-                            <div
-                              style={{
-                                display: "flex",
-                                // flex: 1,
-                                color: "#174A41",
-                                alignSelf: "stretch",
-                              }}
-                            >
-                              <FaCheck color="#6c2a8c" size={18} />
-                            </div>
-                          }
-                          borderColor="#6c2a8c"
-                          // borderRadius={10}
-                          size={22}
-                          label={<span>Tutor</span>}
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-6">
-                    <div
-                      onClick={() => handleCheckbox("student")}
-                      className={
-                        checked == "student"
-                          ? `custom-checkbox`
-                          : `custom-checkbox`
-                      }
-                    >
-                      <Image
-                        src={studentImg}
-                        alt="teacher"
-                        height={50}
-                        width={50}
-                      />
-                      <div className="ml-10 item-center">
-                        <Checkbox
-                          checked={checked == "student" ? true : false}
-                          value="student"
-                          icon={
-                            <div
-                              style={{
-                                // display: "flex",
-                                // flex: 1,
-                                color: "#174A41",
-                                alignSelf: "center",
-                              }}
-                            >
-                              <FaCheck color="#6c2a8c" size={18} />
-                            </div>
-                          }
-                          borderColor="#6c2a8c"
-                          // borderRadius={10}
-                          size={22}
-                          label={<span className="text-center">Student</span>}
-                        />
-                      </div>
-                    </div>
-                  </div>
+                <div className="text-center headline py-3">
+                  <h3>Khuje Now - তে আপনাকে স্বাগতম</h3>
+                  <h5>আপনার একাউন্ট পরিচালনা করতে লগ ইন করুন</h5>
                 </div>
+
+                {/* <h4 className="headline text-center py-3">লগ ইন</h4> */}
 
                 <form className="mt-20" onSubmit={loginSubmit}>
                   <div className="form-group">
                     <label className="form-label" htmlFor="input-1">
-                      Email or Phone *
+                      ইমেইল / ফোন *
                     </label>
 
                     <input
@@ -277,7 +196,7 @@ function Login() {
                   </div>
                   <div className="form-group">
                     <label className="form-label" htmlFor="input-4">
-                      Password *
+                      পাসওয়ার্ড *
                     </label>
 
                     <input
@@ -318,7 +237,7 @@ function Login() {
                         type="submit"
                       >
                         <h6 className="text-light">
-                          Login {checked != "" && `in as a ${checked}`}
+                          সাবমিট
                         </h6>
                       </button>
                     )}

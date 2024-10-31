@@ -23,7 +23,7 @@ export default function UpdateStuProfile() {
 
   return (
     <>
-      <Meta title="Payment Section | Tutor Sheba" />
+      <Meta title="Payment Section | Khuje Now" />
 
       <div className="app-main__outer">
         <div className="app-main__inner">

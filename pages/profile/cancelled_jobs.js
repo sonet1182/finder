@@ -49,7 +49,7 @@ export default function CancelledJobs() {
 
   return (
     <>
-      <Meta title="Profile-update | Tutor Sheba" />
+      <Meta title="Profile-update | Khuje Now" />
 
       <div className="">
         <div className="bg-info mt-3 py-2 pl-2">

@@ -66,7 +66,7 @@ export default function Update() {
 
   return (
     <>
-      <Meta title="Profile Update | Tutor Sheba" />
+      <Meta title="Profile Update | Khuje Now" />
 
       <div>
         <div className="row text-center">

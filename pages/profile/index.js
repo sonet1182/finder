@@ -116,7 +116,7 @@ export default function Profile() {
 
   return (
     <>
-      <Meta title="Profile | Tutor Sheba" />
+      <Meta title="Profile | Khuje Now" />
       <meta property="og:image" content={OGImage} />
 
       <div className="row">

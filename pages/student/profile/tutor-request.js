@@ -237,7 +237,7 @@ export default function TutorRequest() {
 
   return (
     <>
-      <Meta title="Payment Section | Tutor Sheba" />
+      <Meta title="Payment Section | Khuje Now" />
 
       <div className="app-main__outer">
         <div className="row app-main__inner">

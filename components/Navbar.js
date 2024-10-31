@@ -126,8 +126,13 @@ const Navbar = () => {
                 </a>
               </li>
 
-              <li className="nav-item">
-                <a className="nav-link" href="https://course.tutorsheba.com/">
+              <li className="nav-item link">
+                <a
+                  onClick={() => routingHandler("/contact")}
+                  className={`nav-link ${
+                    router.pathname === "/contact" ? "active" : ""
+                  }`}
+                >
                   যোগাযোগ করুন
                 </a>
               </li>

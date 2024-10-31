@@ -50,7 +50,7 @@ export default function ViewProfile() {
 
   return (
     <>
-      <Meta title="Profile-view | Tutor Sheba" />
+      <Meta title="Profile-view | Khuje Now" />
 
       <div className="">
                   <div className="box-border-single">

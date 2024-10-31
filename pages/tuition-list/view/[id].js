@@ -164,7 +164,7 @@ function TuitionDetails(req) {
     <>
       {loading ? (
         <>
-          <Meta title={`Tutor Details | Tutor Sheba`} />
+          <Meta title={`Tutor Details | Khuje Now`} />
           <section className="section-box mt-20">
             <div className="container">
               <div className="row d-flex">

@@ -460,7 +460,7 @@ function TutorDetails(req) {
     <>
       {loading ? (
         <>
-          <Meta title={`Tutor Details | Tutor Sheba`} />
+          <Meta title={`Tutor Details | Khuje Now`} />
 
           <div className="row mt-30">
             <div className="col-md-3">

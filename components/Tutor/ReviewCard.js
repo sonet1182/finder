@@ -41,7 +41,7 @@ function ReviewCard({ reviewData }) {
             <div className="col-md-10 col-9">
               <div>
                 {reviewData.student_id == 0
-                  ? "Tutor Sheba"
+                  ? "Khuje Now"
                   : reviewData.student?.name}
               </div>
 

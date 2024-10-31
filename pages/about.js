@@ -19,7 +19,7 @@ const  AboutUs = () => {
 
   return (
     <>
-      <Meta title="About | Tutor Sheba" />
+      <Meta title="About | Khuje Now" />
       <main className="main">
       
       <section className="section-box mt-20">

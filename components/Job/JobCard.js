@@ -69,7 +69,7 @@ function JobCard({ job }) {
                   Not Available
                 </button>
               ) : (
-                <Link href={`/tuition-list/view/${job.id}`}>
+                <Link href={`/found-post/view/${job.id}`}>
                   <div
                     className="btn btn-1 gradient_bg text-light"
                     style={{ fontSize: "15px" }}

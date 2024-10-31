@@ -61,7 +61,7 @@ const convertObj = (obj) => {
 
   return (
     <>
-      <Meta title="Profile-update | Tutor Sheba" />
+      <Meta title="Profile-update | Khuje Now" />
 
       <div className="">
       <h3 className="mt-10 mb-10 page-title">Job Board</h3>

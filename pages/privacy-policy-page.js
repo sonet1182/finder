@@ -47,7 +47,7 @@ function PrivacyPolicyPage() {
 
   return (
     <>
-      <Meta title="Privacy Policy | Tutor Sheba" />
+      <Meta title="Privacy Policy | Khuje Now" />
       {loading ? skeletonLoader : <main className="name">
         <section className="section-box mt-20 mb-50">
           <div className="container">

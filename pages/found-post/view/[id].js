@@ -2,33 +2,13 @@ import { useRouter } from "next/router";
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
-import Meta from "../../../components/Meta/Meta";
 import publicApi from "../../../services/publicApi";
 import MasterLayout from "../../../Layouts/MasterLayout";
-
-import moment from "moment/moment";
-import {
-  FaArrowRight,
-  FaCalendar,
-  FaElementor,
-  FaGraduationCap,
-  FaLocationArrow,
-  FaMapMarked,
-  FaMapMarker,
-  FaMapMarkerAlt,
-  FaMoneyBill,
-  FaPaperPlane,
-  FaSchool,
-  FaSearch,
-  FaSeedling,
-  FaUserGraduate,
-  FaUserTie,
-} from "react-icons/fa";
+import { FaPaperPlane } from "react-icons/fa";
 import Link from "next/link";
-import { getToken } from "../../../services/auth/token";
 import axios from "axios";
 import { toast } from "react-toastify";
-import TuitionDetailsSkeleton from "../../../components/Skeletons/TuitionDetailsSkeleton";
+import PostCard from "../../../components/PostDetailsComponent/PostCard";
 
 function TuitionDetails(req) {
   const router = useRouter();
@@ -114,7 +94,7 @@ function TuitionDetails(req) {
     } else {
       setAppAble(0);
     }
-  }, [id, accProgress]);
+  }, [id, accProgress, applied]);
 
   const applyBtn = (
     <>
@@ -162,177 +142,7 @@ function TuitionDetails(req) {
 
   return (
     <>
-      {loading ? (
-        <>
-          <Meta title={`Tutor Details | Tutor Sheba`} />
-          <section className="section-box mt-20">
-            <div className="container">
-              <div className="row d-flex">
-                <div className="col-md-9 mx-auto">
-                  <div className="box-border-single">
-                    <div className="container">
-                      <div className="tuition-list">
-                        <div className="">
-                          <h2 className="text-center"> {tuition?.title}</h2>
-                          <p className="text-center font-md">
-                            <b>Job ID :</b> {tuition?.id} &nbsp; &nbsp;
-                            <span className="m-line"></span>{" "}
-                            <b>Posted at :</b>
-                            {moment(tuition?.created_at).format("LL")}
-                          </p>
-
-                          <h4 className="text-center py-3">
-                            <FaMapMarkerAlt className="text-danger" />
-                          </h4>
-
-                          <h4 className="text-center">
-                            {tuition?.districts?.districtName}{" "}
-                            {tuition?.districts && ","} {tuition?.s_area}
-                          </h4>
-
-                          <div className="job-details mt-3">
-                            <div className="row">
-                              <div className="col-md-4 col-6">
-                                <div className="pb-2">
-                                  <FaSchool /> Medium:<br></br>
-                                  <strong> {tuition?.s_medium}</strong>
-                                </div>
-                              </div>
-                              <div className="col-md-4 col-6">
-                                <div className="pb-2">
-                                  <FaElementor /> Class: <br></br>
-                                  <strong> {tuition?.s_class}</strong>
-                                </div>
-                              </div>
-
-                              <div className="col-md-4 col-6">
-                                <div className="pb-2">
-                                  <FaUserGraduate /> Student Gender:<br></br>
-                                  <strong>{tuition?.s_gender}</strong>
-                                </div>
-                              </div>
-
-                              <div className="col-md-4 col-6">
-                                <div className="pb-2">
-                                  <FaUserTie /> Preferred Tutor:<br></br>
-                                  <strong>{tuition?.t_gender}</strong>
-                                </div>
-                              </div>
-
-                              <div className="col-md-4 col-6">
-                                <div className="pb-2">
-                                  <FaCalendar /> Tutoring Days:<br></br>
-                                  <strong>{tuition?.t_days} </strong>
-                                </div>
-                              </div>
-
-                              <div className="col-md-4 col-6">
-                                <div className="pb-2">
-                                  <FaCalendar /> Tutoring Time:<br></br>
-                                  <strong>
-                                    {tuition?.time
-                                      ? tuition.time
-                                      : "Negotiable"}
-                                  </strong>
-                                </div>
-                              </div>
-
-                              {tuition?.time_duration &&
-                                <div className="col-md-4 col-6">
-                                <div className="pb-2">
-                                  <FaCalendar /> Tutoring Duration:<br></br>
-                                  <strong>
-                                    {tuition?.time_duration}
-                                  </strong>
-                                </div>
-                              </div>
-                              }
-
-                              
-
-                              <div className="col-md-4 col-6">
-                                <div className="pb-2">
-                                  <FaCalendar /> No of Student:<br></br>
-                                  <strong>
-                                    {tuition?.s_number
-                                      ? tuition?.s_number
-                                      : "1"}
-                                  </strong>
-                                </div>
-                              </div>
-
-                              <div className="col-md-4 col-6">
-                                <div className="pb-2">
-                                  <FaGraduationCap /> Subject: <br></br>
-                                  {tuition?.t_subject
-                                    .split(",")
-                                    .map((subject) => (
-                                      <span
-                                        className="badge badge-success mr-1"
-                                        key={subject.trim()}
-                                      >
-                                        {subject.trim()}
-                                      </span>
-                                    ))}
-                                </div>
-                              </div>
-
-                              <div className="col-md-4 col-6">
-                                <div className="pb-2">
-                                  <FaMoneyBill /> Salary: <br></br>
-                                  <span className="card-text-price text-primary">
-                                    {tuition?.t_salary >= 1
-                                      ? Number(
-                                          tuition?.t_salary
-                                        ).toLocaleString() + " Tk"
-                                      : "Negotiable"}
-                                  </span>
-                                  <span className="text-muted">/Month</span>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-
-                          <div className="row" style={{ marginTop: "3rem" }}>
-                            <div className="col-md-8">
-                              Other Requirements : <br></br>
-                              <strong> {tuition?.ex_information}</strong>
-                            </div>
-                            <div className="col-md-4">
-                            
-                              {tuition?.assigned?.length > 0 ? (
-                                <button
-                                  className="btn btn-outline-danger mb-2 w-100"
-                                  disabled
-                                >
-                                  Not Available
-                                </button>
-                              ) : (
-                                applyBtn
-                              )}
-
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className="">
-                        <Link href={`/tuition-list`}>
-                          <div className="btn btn-1 gradient_bg text-light w-100">
-                            Go Back to All Jobs
-                          </div>
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-        </>
-      ) : (
-        <TuitionDetailsSkeleton />
-      )}
+      <PostCard />
     </>
   );
 }

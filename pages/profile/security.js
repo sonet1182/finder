@@ -82,7 +82,7 @@ export default function ProfileSecurity() {
 
   return (
     <>
-      <Meta title="Payment Section | Tutor Sheba" />
+      <Meta title="Payment Section | Khuje Now" />
 
       <div className="">
         <div className="bg-info mt-3 py-2 pl-2">

@@ -7,7 +7,7 @@ import PrivateLayout from "../../../Layouts/PrivateLayout";
 export default function PaymentSection() {
   return (
     <>
-      <Meta title="Payment Section | Tutor Sheba" />
+      <Meta title="Payment Section | Khuje Now" />
 
       <div className="">
         <h3 className="mt-10 mb-10 page-title">Payment Section</h3>

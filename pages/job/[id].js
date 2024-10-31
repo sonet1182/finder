@@ -30,7 +30,7 @@ function JobDetails({ jobDetails, relJobs }) {
 
   return (
     <>
-      <Meta title={`${title} | Tutor Sheba`} />
+      <Meta title={`${title} | Khuje Now`} />
       <section className="section-box mt-20">
         <div className="container">
           <div className="row">

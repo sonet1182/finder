@@ -127,7 +127,7 @@ export default function ProfileVerification() {
 
   return (
     <>
-      <Meta title="Profile Verification | Tutor Sheba" />
+      <Meta title="Profile Verification | Khuje Now" />
 
       <div className="">
         <h3 className="mt-10 mb-10 page-title">Profile Verification</h3>

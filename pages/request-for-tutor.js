@@ -133,7 +133,7 @@ function TutorRequest() {
 
   return (
     <>
-      <Meta title="Tutor Request | Tutor Sheba" />
+      <Meta title="Tutor Request | Khuje Now" />
       <main className="name">
         <section className="section-box mt-20 mb-50">
           <div className="container">

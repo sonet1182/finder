@@ -8,7 +8,7 @@ const Contact = () => {
    
   return (
     <>
-      <Meta title="Contact | Tutor Sheba" />
+      <Meta title="Contact | Khuje Now" />
       <main className="name">
         <section className="section-box mt-20 mb-50">
           <div className="container">

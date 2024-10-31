@@ -38,7 +38,7 @@ export default function ApplyStatus() {
 
   return (
     <>
-      <Meta title="Profile | Tutor Sheba" />
+      <Meta title="Profile | Khuje Now" />
 
         <h3 className="mt-10 mb-10 page-title">Apply Status</h3>
 

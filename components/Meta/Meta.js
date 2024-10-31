@@ -16,7 +16,7 @@ function Meta({ title, description, keywords }) {
       <meta property="og:image" content={OGImage} />
       <meta name="og:type" content="website" />
       <meta name="og:url" content="https://tutorsheba.com/" />
-      <meta name="og:site_name" content="Tutor Sheba" />
+      <meta name="og:site_name" content="Khuje Now" />
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:title" content={title} />
       {/* <meta name="twitter:description" content={description} />
@@ -28,11 +28,11 @@ function Meta({ title, description, keywords }) {
 }
 
 Meta.defaultProps = {
-  title: "Tutor Sheba",
+  title: "Khuje Now",
   description:
-    "Tutor Sheba - TutorSheba.com is a platform where parents, students and tutors can easily connect with each other. We provide qualified Home/Online tutors to help your child with studies and helping them perform better in exams. We are a group of 2,50,000+ Tutors and 30,000+ satisfied parents/students in Dhaka, Chattagram, Rajshahi, Sylhet, Khulna, Barishal, Rangpur, Mymensingh cities for different academic and professional subjects.",
+    "Khuje Now - TutorSheba.com is a platform where parents, students and tutors can easily connect with each other. We provide qualified Home/Online tutors to help your child with studies and helping them perform better in exams. We are a group of 2,50,000+ Tutors and 30,000+ satisfied parents/students in Dhaka, Chattagram, Rajshahi, Sylhet, Khulna, Barishal, Rangpur, Mymensingh cities for different academic and professional subjects.",
   keywords:
-    "Tutor Sheba, Part Time Job, Tuition Jobs, Home Tutor, Find tuition, Find Tutor",
+    "Khuje Now, Part Time Job, Tuition Jobs, Home Tutor, Find tuition, Find Tutor",
   OGImage: OGImage,
 };
 
