@@ -15,7 +15,7 @@ function Meta({ title, description, keywords }) {
       <meta name="og:description" content={description} />
       <meta property="og:image" content={OGImage} />
       <meta name="og:type" content="website" />
-      <meta name="og:url" content="https://tutorsheba.com/" />
+      <meta name="og:url" content="https://khujenow.com/" />
       <meta name="og:site_name" content="Khuje Now" />
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:title" content={title} />
@@ -30,9 +30,9 @@ function Meta({ title, description, keywords }) {
 Meta.defaultProps = {
   title: "Khuje Now",
   description:
-    "Khuje Now - TutorSheba.com is a platform where parents, students and tutors can easily connect with each other. We provide qualified Home/Online tutors to help your child with studies and helping them perform better in exams. We are a group of 2,50,000+ Tutors and 30,000+ satisfied parents/students in Dhaka, Chattagram, Rajshahi, Sylhet, Khulna, Barishal, Rangpur, Mymensingh cities for different academic and professional subjects.",
+    "Khuje Now - Discover and connect with people or locate lost items on Khujenow.com – your community-driven platform for posting about missing persons or belongings. Join now to help reunite owners with what matters most.",
   keywords:
-    "Khuje Now, Part Time Job, Tuition Jobs, Home Tutor, Find tuition, Find Tutor",
+    "Khuje Now, Find and Lost, Find, Lost, Harano Buggopti, Shondhan, Khuje Pawa, Khoj",
   OGImage: OGImage,
 };
 

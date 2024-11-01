@@ -17,7 +17,7 @@ import {
 } from "react-icons/fa";
 import publicApi from "../../../../../services/publicApi";
 import Skeleton from "react-loading-skeleton";
-import StarRatingComponent from "react-star-rating-component"; // Import the star rating component
+// import StarRatingComponent from "react-star-rating-component"; // Import the star rating component
 import swal from "sweetalert";
 import TutorCard3 from "../../../../../components/Tutor/TutorCard3";
 
@@ -285,11 +285,11 @@ export default function TuitionDetails() {
                             <div className="">
                               <label>Ratings</label>
                               <br />
-                              <StarRatingComponent
+                              {/* <StarRatingComponent
                                 name="rating"
                                 starCount={5}
                                 value={reviewData.rating}
-                              />
+                              /> */}
                             </div>
                             <div className="form-group">
                               <label htmlFor="DetailsInformation">Review</label>
@@ -316,14 +316,14 @@ export default function TuitionDetails() {
                             <div className="">
                               <label>Ratings</label>
                               <br />
-                              <StarRatingComponent
+                              {/* <StarRatingComponent
                                 name="rating"
                                 starCount={5}
                                 value={rating}
                                 onStarClick={(nextValue) =>
                                   setRating(nextValue)
                                 }
-                              />
+                              /> */}
                             </div>
                             <div className="form-group">
                               <label htmlFor="DetailsInformation">Review</label>

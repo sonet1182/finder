@@ -123,7 +123,7 @@ function Register() {
         setConfirmPassAlert(false);
 
         if (checked === "tutor") {
-          const response = await publicApi.post("api/register", data);
+          const response = await publicApi.post("api/register258", data);
 
           if (response.data.status === 200) {
             saveToken(response.data.api_token);
@@ -289,7 +289,7 @@ function Register() {
               </div>
             </div>
 
-            <div className="col-md-6">
+            {/* <div className="col-md-6">
               <div className="form-group">
                 <label className="form-label" htmlFor="input-4">
                   Tuition District <span className="required">*</span>
@@ -368,7 +368,7 @@ function Register() {
                   Set your preferred tuition area.
                 </small>
               </div>
-            </div>
+            </div> */}
           </div>
 
           <div className="form-group row">
@@ -539,88 +539,6 @@ function Register() {
               data-wow-delay=".2s"
             >
               <h4 className="headline text-center py-3">Register</h4>
-
-              <div
-                className="row my-3"
-                style={{ padding: "8px 0px", background: "#e0e6f6" }}
-              >
-                <div className="col-md-6">
-                  <div
-                    onClick={() => handleCheckbox("tutor")}
-                    className={
-                      checked == "tutor" ? `custom-checkbox` : `custom-checkbox`
-                    }
-                  >
-                    <Image
-                      src={teacherImg}
-                      alt="teacher"
-                      height={50}
-                      width={50}
-                    />
-                    <div className="ml-10 item-center">
-                      <Checkbox
-                        checked={checked == "tutor" ? true : false}
-                        value="tutor"
-                        icon={
-                          <div
-                            style={{
-                              display: "flex",
-                              // flex: 1,
-                              color: "#174A41",
-                              alignSelf: "stretch",
-                            }}
-                          >
-                            <FaCheck color="#6c2a8c" size={18} />
-                          </div>
-                        }
-                        borderColor="#6c2a8c"
-                        // borderRadius={10}
-                        size={22}
-                        label={<h6>Tutor</h6>}
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div className="col-md-6">
-                  <div
-                    onClick={() => handleCheckbox("student")}
-                    className={
-                      checked == "student"
-                        ? `custom-checkbox`
-                        : `custom-checkbox`
-                    }
-                  >
-                    <Image
-                      src={studentImg}
-                      alt="student"
-                      height={50}
-                      width={50}
-                    />
-                    <div className="ml-10 item-center">
-                      <Checkbox
-                        checked={checked == "student" ? true : false}
-                        value="student"
-                        icon={
-                          <div
-                            style={{
-                              // display: "flex",
-                              // flex: 1,
-                              color: "#174A41",
-                              alignSelf: "center",
-                            }}
-                          >
-                            <FaCheck color="#6c2a8c" size={18} />
-                          </div>
-                        }
-                        borderColor="#6c2a8c"
-                        // borderRadius={10}
-                        size={22}
-                        label={<h6 className="text-center">Student</h6>}
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
 
               {formSection}
             </div>

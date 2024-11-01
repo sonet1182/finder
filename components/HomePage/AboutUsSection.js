@@ -12,7 +12,7 @@ function AboutUsSection() {
           আমাদের সম্পর্কে
         </h2>
         <p className="font-lg color-text-paragraph-2 wow animate__animated animate__fadeInUp mb-hide">
-          "খুঁজে নাও - হারানো জিনিস ফিরে পাওয়ার সহজ উপায়।"
+        &quot;খুঁজে নাও - হারানো জিনিস ফিরে পাওয়ার সহজ উপায়।&quot;
         </p>
       </div>
       <div className="container">

@@ -369,7 +369,7 @@ const Navbar2 = () => {
                 <a
                   onClick={() => setToggle(false)}
                   className="nav-link"
-                  href="https://course.tutorsheba.com/"
+                  href="https://khujenow.com/"
                 >
                   COURSES
                 </a>

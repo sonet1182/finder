@@ -332,7 +332,7 @@ function Refer(req) {
                     <strong>Q. what will happen after fill the forms ?</strong>
                     <p className="mt-1 text-secondary text-justify">
                       After fill up the form the information will be sent to
-                      tutorsheba support team. They will review/ verify the info
+                      khujenow support team. They will review/ verify the info
                       and will publish on the available tuitions section.
                     </p>
                   </div>

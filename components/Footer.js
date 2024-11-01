@@ -33,7 +33,7 @@ function Footer() {
               <div className="footer-social">
                 <a
                   className="icon-socials icon-facebook"
-                  href="https://www.facebook.com/tutorsheba.official?mibextid=ZbWKwL"
+                  href="https://www.facebook.com/khujenow.official?mibextid=ZbWKwL"
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -59,7 +59,7 @@ function Footer() {
                 </a>
                 <a
                   className="icon-socials icon-linkedin"
-                  href="https://www.youtube.com/@tutorsheba"
+                  href="https://www.youtube.com/@khujenow"
                   target="_blank"
                   rel="noreferrer"
                 >
