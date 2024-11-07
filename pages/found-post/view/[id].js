@@ -9,6 +9,7 @@ import Link from "next/link";
 import axios from "axios";
 import { toast } from "react-toastify";
 import PostCard from "../../../components/PostDetailsComponent/PostCard";
+import PostSuggestion from "../../../components/PostDetailsComponent/PostSuggestion";
 
 function TuitionDetails(req) {
   const router = useRouter();
@@ -143,6 +144,7 @@ function TuitionDetails(req) {
   return (
     <>
       <PostCard />
+      <PostSuggestion/>
     </>
   );
 }

@@ -213,11 +213,11 @@ function Login() {
                   <div className="login_footer form-group d-flex justify-content-between">
                     <label className="cb-container">
                       <input type="checkbox" />
-                      <span className="text-small">Remenber me</span>
+                      <span className="text-small">মনে রাখুন</span>
                       <span className="checkmark"></span>
                     </label>
                     <Link href="/auth/forget_password" className="text-muted">
-                      Forgot Password
+                      পাসওয়ার্ড ভুলে গেলে এখানে ক্লিক করুন
                     </Link>
                   </div>
 
@@ -244,8 +244,8 @@ function Login() {
                   </div>
 
                   <div className="text-center">
-                    <Link href="/auth/register" className="text-center">
-                      Click here to Register
+                    <Link href="/auth/register" className="text-center text-primary">
+                      রেজিস্টার করতে এখানে ক্লিক করুন
                     </Link>
                   </div>
                 </form>

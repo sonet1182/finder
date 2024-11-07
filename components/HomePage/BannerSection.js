@@ -111,7 +111,7 @@ function BannerSection() {
                 হারানো জিনিসের খোঁজ নিন বা পাওয়া জিনিসের খবর জানাতে পোস্ট করুন এখানে ...
               </div>
               <div
-                className="form-find mt-40 wow animate__animated animate__fadeIn"
+                className="form-find mt-40 wow animate__animated"
                 data-wow-delay=".2s"
               >
                 <form>

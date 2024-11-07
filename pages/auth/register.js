@@ -202,10 +202,10 @@ function Register() {
       {checked == "tutor" ? (
         <>
           <div className="form-group row">
-            <div className="col-md-6">
+            <div className="col-md-12">
               <div className="form-group">
                 <label className="form-label" htmlFor="input-1">
-                  Name <span className="required">*</span>
+                  নাম <span className="required">*</span>
                 </label>
                 <input
                   className="form-control"
@@ -222,34 +222,12 @@ function Register() {
               </div>
             </div>
 
-            <div className="col-md-6">
-              <div className="form-group">
-                <label className="form-label" htmlFor="input-1">
-                  Gender <span className="required">*</span>
-                </label>
-
-                <Form.Select name="gender" className="" onChange={handleInput}>
-                  <option className="" value="" disabled selected>
-                    Choose One
-                  </option>
-                  <option value="Male">
-                    <FaMale /> Male
-                  </option>
-                  <option value="Female">
-                    <FaFemale /> Female
-                  </option>
-                </Form.Select>
-
-                <p className="text-danger ">
-                  {registerInput?.error_list?.gender}
-                </p>
-              </div>
-            </div>
+   
 
             <div className="col-md-6">
               <div className="form-group">
                 <label className="form-label" htmlFor="input-2">
-                  Email <span className="required">*</span>
+                  ইমেইল <span className="required">*</span>
                 </label>
                 <input
                   className="form-control"
@@ -269,7 +247,7 @@ function Register() {
             <div className="col-md-6">
               <div className="form-group">
                 <label className="form-label" htmlFor="input-2">
-                  Phone <span className="required">*</span>
+                  ফোন <span className="required">*</span>
                 </label>
                 <input
                   className="form-control"
@@ -375,7 +353,7 @@ function Register() {
             <div className="col-md-6">
               <div className="form-group">
                 <label className="form-label" htmlFor="input-4">
-                  Password <span className="required">*</span>
+                  পাসওয়ার্ড <span className="required">*</span>
                 </label>
                 <input
                   className="form-control"
@@ -394,7 +372,7 @@ function Register() {
             <div className="col-md-6">
               <div className="form-group">
                 <label className="form-label" htmlFor="input-5">
-                  Re-Password <span className="required">*</span>
+                 পুনঃ পাসওয়ার্ড দিন <span className="required">*</span>
                 </label>
                 <input
                   className="form-control"
@@ -423,7 +401,7 @@ function Register() {
             <div className="col-md-6">
               <div className="form-group">
                 <label className="form-label" htmlFor="input-2">
-                  Name <span className="required">*</span>
+                  ্নাম <span className="required">*</span>
                 </label>
                 <input
                   className="form-control"
@@ -441,7 +419,7 @@ function Register() {
             <div className="col-md-6">
               <div className="form-group">
                 <label className="form-label" htmlFor="input-2">
-                  Phone <span className="required">*</span>
+                  ফোন <span className="required">*</span>
                 </label>
                 <input
                   className="form-control"
@@ -460,7 +438,7 @@ function Register() {
             <div className="col-md-6">
               <div className="form-group">
                 <label className="form-label" htmlFor="input-4">
-                  Password <span className="required">*</span>
+                  পাসওয়ার্ড <span className="required">*</span>
                 </label>
                 <input
                   className="form-control"
@@ -494,7 +472,7 @@ function Register() {
                   placeholder="Re-enter Password..."
                 />
                 {confirmPassAlert ? (
-                  <p className="text-danger">Password Mismatched!</p>
+                  <p className="text-danger">পাসওয়ার্ড ভুল!</p>
                 ) : (
                   ""
                 )}
@@ -511,14 +489,14 @@ function Register() {
           </button>
         ) : (
           <button className="btn-brand-1 hover-up w-100" type="submit">
-            Submit &amp; Register
+            রেজিস্টার করুন
           </button>
         )}
       </div>
       <div className="text-muted text-center">
-        Already have an account?{" "}
+        ইতিমধ্যে একাউন্ট আছে?{" "}
         <Link href="/auth/login">
-          <a href="page-signin.html">Sign in</a>
+          <a href="page-signin.html">সাইন ইন করুন</a>
         </Link>
       </div>
     </Form>
@@ -538,7 +516,7 @@ function Register() {
               className="card px-5 py-3 mb-3 form-find mt-10 wow animate__animated animate__fadeIn "
               data-wow-delay=".2s"
             >
-              <h4 className="headline text-center py-3">Register</h4>
+              <h4 className="headline text-center py-3">রেজিস্টার</h4>
 
               {formSection}
             </div>

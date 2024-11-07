@@ -29,21 +29,21 @@ function JobCard({ job }) {
             </a>
           </div>
 
-          <span className="btn btn-grey-small ml-auto ">পোস্ট আইডি: {job.id}</span>
+          <span className="btn btn-grey-small ml-auto ">
+            পোস্ট আইডি: 12365
+          </span>
         </div>
 
         <div className="card-block-info">
-          <Link href={`/tuition-list/view/${job.id}`}>
+          <Link href={`/found-post/view/12365`}>
             <h4 className="text-ellipsis" style={{ cursor: "pointer" }}>
               একটি পাসপোর্ট হারানো গিয়েছে
             </h4>
           </Link>
 
           <div className="mt-4 mb-3">
-            
             <span className="publish">
               <FaNewspaper />{" "}
-              {job.created_at && moment(job.created_at).fromNow()}
             </span>
           </div>
 
@@ -51,49 +51,31 @@ function JobCard({ job }) {
             <div className="row">
               <div className="col-md-4"></div>
               <div className="col-md-8 truncate-text">
-  গত ৩০ জুলাই, ২০২৮ - দুপুর ১২ টার দিকে এয়ারপোর্ট থেকে ফেরাএ পথে সি,এন,জি থেকে নামার সময় আমিয়া ভুল বসত আমার হ্যান্ড ব্যাগ টা ফুলে ফেলে রেখে আসি। 
-  ব্যগ টি তে কিছু নগদ অর্থ সহ আমার পাস্পোর্ট টি হারিয়ে ফেলেছি। যদি কোন সহৃদয়
-  বান ব্যাকিত ব্যাগটি পেয়ে থাকেন তবে অতিওদ্রুত যোগাযোগ করার জন্য অনুড়ধ করা হল
-</div>
+                গত ৩০ জুলাই, ২০২৮ - দুপুর ১২ টার দিকে এয়ারপোর্ট থেকে ফেরাএ পথে
+                সি,এন,জি থেকে নামার সময় আমিয়া ভুল বসত আমার হ্যান্ড ব্যাগ টা ফুলে
+                ফেলে রেখে আসি। ব্যগ টি তে কিছু নগদ অর্থ সহ আমার পাস্পোর্ট টি
+                হারিয়ে ফেলেছি। যদি কোন সহৃদয় বান ব্যাকিত ব্যাগটি পেয়ে থাকেন তবে
+                অতিওদ্রুত যোগাযোগ করার জন্য অনুড়ধ করা হল
+              </div>
             </div>
           </div>
 
           <div className="card-2-bottom d-flex">
             <p className="font-sm color-text-paragraph mt-2">
-              পোস্টেড: {moment(job.created_at).format("LL")}
+              পোস্টেড:
             </p>
 
             <div className="ml-auto">
-              {job.approval == 5 || job?.assigned?.length > 0 ? (
-                <button className="btn btn-outline-danger" disabled>
-                  Not Available
-                </button>
-              ) : (
-                <Link href={`/found-post/view/${job.id}`}>
-                  <div
-                    className="btn btn-1 gradient_bg text-light"
-                    style={{ fontSize: "15px" }}
-                  >
-                    বিস্তারিত দেখুন
-                  </div>
-                </Link>
-              )}
+              <Link href={`/found-post/view/12356`}>
+                <div
+                  className="btn btn-1 gradient_bg text-light"
+                  style={{ fontSize: "15px" }}
+                >
+                  বিস্তারিত দেখুন
+                </div>
+              </Link>
             </div>
           </div>
-
-          {job.s_phoneNumber && (
-            <>
-            <hr></hr>
-            <div className="w-100 d-flex justify-content-center">
-              <a
-                href={`tel:${job.s_phoneNumber}`}
-                className="btn btn-1 gradient_bg text-light text-center"
-              >
-                <FaPhone /> Call Guardian/Student
-              </a>
-            </div>
-            </>
-          )}
         </div>
       </div>
     </>
