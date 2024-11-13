@@ -25,8 +25,8 @@ const nextConfig = {
     ],
   },
   env: {
-    // domain: "http://localhost:8000/",
-    domain: "https://backend.tutorsheba.com/",
+    domain: "http://localhost:8000/",
+    // domain: "https://backend.tutorsheba.com/",
   },
 };
 

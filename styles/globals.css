@@ -11754,8 +11754,16 @@ th {
   background-color: #ff4040;
 }
 
-.css-14el2xx-placeholder {
+/* .form-find .css-14el2xx-placeholder {
   font-size: 20px;
+} */
+
+/* .contact-form-style .css-1s2u09g-control{
+  min-height: 25px;
+} */
+
+.contact-form-style .css-1insrsq-control{
+  height: 52px;
 }
 
 
