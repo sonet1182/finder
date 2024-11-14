@@ -3,6 +3,7 @@ import React, { useState, useCallback, useEffect } from "react";
 import { FaCloudUploadAlt, FaTrashAlt } from "react-icons/fa";
 import { useDropzone } from "react-dropzone";
 import ReactSelect from "react-select";
+import publicApi from "../../services/publicApi";
 
 function LostPost({ params }) {
   const {
@@ -68,6 +69,8 @@ function LostPost({ params }) {
   };
 
   const formSubmitHandler = async (e) => {
+    e.preventDefault();
+
     const formData = new FormData();
 
     formData.append("category", category);
@@ -80,16 +83,11 @@ function LostPost({ params }) {
       formData.append("images[]", image.file);
     });
 
-    const response = await privateApi.post(
-      "api/student/update_profile_photo",
-      formData
-    );
+    const response = await publicApi.post("api/submit_post", formData);
+
+    console.log("response", formData);
 
     if (response.status === 200) {
-      const user_data = JSON.parse(localStorage.getItem("user_data")) || {};
-      user_data.image = response.data.data;
-      localStorage.setItem("user_data", JSON.stringify(user_data));
-
       toast.success(response.data.message, {
         position: "top-right",
         autoClose: 500,
