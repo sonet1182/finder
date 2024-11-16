@@ -79,6 +79,22 @@ function LostPost({ params }) {
     formData.append("date", date);
     formData.append("time", time);
 
+    formData.append("honour", honour);
+    formData.append("note", note);
+    formData.append("contact_number", contactNumber);
+    formData.append("contact_place", contactPlace);
+
+    formData.append("selected_district", selectedDistrict);
+    formData.append("selected_division", selectedDivision);
+    formData.append("selected_thana", selectedThana);
+
+    formData.append("selected_district1", selectedDistrict1);
+    formData.append("selected_division1", selectedDivision1);
+    formData.append("selected_thana1", selectedThana1);
+
+    formData.append("place", place);
+    formData.append("contact_place", contactPlace);
+
     images.forEach((image) => {
       formData.append("images[]", image.file);
     });
